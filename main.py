@@ -1,6 +1,6 @@
 # -*- coding: cp1251 -*-
 from datetime import datetime, timedelta
-from Update import Update_data_info
+
 
 import requests
 from bs4 import BeautifulSoup
@@ -47,15 +47,6 @@ Short_name = {'Іноземна мова І Шастало Віра Олександрівна (Пр)': 'Граматика#',
               'Неділя': 'Нд'}
 start_x = 0
 week_number = datetime.today().isocalendar()[1]
-
-date_file = open('date.txt', 'r')
-if date_file.readline().rstrip() != datetime.today().strftime("%Y-%m-%d"):
-    Update_data_info()
-    date_file.close()
-    date_file = open('date.txt', 'w')
-    date_file.write(datetime.today().strftime("%Y-%m-%d"))
-date_file.close()
-
 def Update_data_info():
     able_days = ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота', 'Неділя']
     able_time = ['08:30 09:50', '10:10 11:30', '12:00 13:20', '13:40 15:00', '15:20 16:40', '17:00 18:20']
@@ -172,6 +163,16 @@ def Update_data_info():
             end_number += 1
             Empty_date_table()
     week_file.close()
+
+date_file = open('date.txt', 'r')
+if date_file.readline().rstrip() != datetime.today().strftime("%Y-%m-%d"):
+    Update_data_info()
+    date_file.close()
+    date_file = open('date.txt', 'w')
+    date_file.write(datetime.today().strftime("%Y-%m-%d"))
+date_file.close()
+
+
 def Read_week():
     day_iter = 0
     lesson_iter = 0
