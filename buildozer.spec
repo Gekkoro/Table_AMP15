@@ -36,7 +36,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = kivy, requests, beautifulsoup4
+requirements = python3, kivy, requests, beautifulsoup4
 
 
 # (str) Custom source folders for requirements
@@ -95,7 +95,7 @@ fullscreen = 0
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-#android.api = 27
+#android.api = 31
 
 # (int) Minimum API your APK will support.
 #android.minapi = 21
